@@ -56,9 +56,11 @@ h1 {
 #controls_panel {
     position: absolute;
     top: 15px;
-    left: -100%;
+    left: -200%;
+    visibility: hidden;
     background: rgba(20, 20, 20, 0.98);
     padding: 20px;
+    opacity: 0;
     border-radius: 20px;
     z-index: 20;
     color: #fff;
@@ -74,6 +76,8 @@ h1 {
 
 #controls_panel.panel-visible {
     left: 70px;
+    visibility: visible;
+    opacity: 1;
 }
 
 #controls_panel h2 {
@@ -189,9 +193,16 @@ h1 {
 }
 
 @media (max-width: 600px) {
+    #controls_panel {
+        left: -200%;
+        transform: translateX(0);
+    }
+
     #controls_panel.panel-visible {
         left: 50%;
         transform: translateX(-50%);
+        visibility: visible;
+        opacity: 1;
         top: 70px;
     }
 
