@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Simulator | Junior Rumiche | Gemini</title>
+    <meta name="description" content="3D World Simulator using Three.js. Created by Junior Rumiche.">
+    <meta name="keywords" content="Simulator, 3D, Three.js, Galaxy, Junior Rumiche, Worlds">
+    <meta name="author" content="Junior Rumiche">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://junior-rumiche.vercel.app/">
+
+    <!-- Structured Data (ld+json) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "World Simulator",
+        "author": {
+            "@type": "Person",
+            "name": "Junior Rumiche"
+        },
+        "description": "3D World Simulator using Three.js."
+    }
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="World Simulator | Junior Rumiche | Gemini">
+    <meta property="og:description" content="3D World Simulator using Three.js. Created by Junior Rumiche.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://junior-rumiche.vercel.app/">
+    <meta property="og:image" content="https://junior-rumiche.vercel.app/path/to/image.jpg">
+    <meta property="og:site_name" content="World Simulator">
+    <meta property="og:see_also" content="https://github.com/junior-rumiche">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="World Simulator | Junior Rumiche | Gemini">
+    <meta name="twitter:description" content="3D World Simulator using Three.js. Created by Junior Rumiche.">
+    <meta name="twitter:image" content="https://junior-rumiche.vercel.app/path/to/image.jpg">
+    <meta name="twitter:creator" content="Junior Rumiche">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- The canvas will be managed by Three.js -->
+
+    <div id="controls_panel">
+        <h2>Settings</h2>
+        <div class="control_group">
+            <label for="num_stars_slider">Stars:</label>
+            <input type="range" id="num_stars_slider" name="num_stars" min="100" max="5000" value="2000" step="100">
+            <span id="num_stars_value">2000</span>
+        </div>
+        <div class="control_group">
+            <label for="num_arms_slider">Arms:</label>
+            <input type="range" id="num_arms_slider" name="num_arms" min="1" max="10" value="3" step="1">
+            <span id="num_arms_value">3</span>
+        </div>
+        <div class="control_group">
+            <label for="arm_spread_slider">Spread:</label>
+            <input type="range" id="arm_spread_slider" name="arm_spread" min="0.01" max="0.5" value="0.4" step="0.4">
+            <span id="arm_spread_value">0.40</span>
+        </div>
+        <div class="control_group">
+            <label for="rotation_factor_slider">Rotation:</label>
+            <input type="range" id="rotation_factor_slider" name="rotation_factor" min="0.5" max="20" value="14.0"
+                step="0.1">
+            <span id="rotation_factor_value">14.0</span>
+        </div>
+        <div class="control_group">
+            <label for="core_concentration_slider">Core:</label>
+            <input type="range" id="core_concentration_slider" name="core_concentration" min="1.0" max="5.0" value="3.0"
+                step="0.1">
+            <span id="core_concentration_value">3.0</span>
+        </div>
+        <div class="control_group">
+            <label for="haze_factor_slider">Haze (%):</label>
+            <input type="range" id="haze_factor_slider" name="haze_factor" min="0" max="50" value="30" step="1">
+            <!-- Value 0-50 for % -->
+            <span id="haze_factor_value">30</span>
+        </div>
+        <button id="regenerate_button">Regenerate Galaxy</button>
+        <button id="capture_button">Capture Image</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
