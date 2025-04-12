@@ -1,3 +1,8 @@
+// Toggle para el panel de configuración
+document.getElementById('toggle_settings').addEventListener('click', function () {
+    document.getElementById('controls_panel').classList.toggle('panel-visible');
+});
+
 /**
  * @file Archivo principal para el simulador de galaxias 3D con Three.js.
  * @author Roo
